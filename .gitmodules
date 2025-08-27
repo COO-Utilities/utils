@@ -1,0 +1,27 @@
+[submodule "gammavac"]
+	path = gammavac
+	url = git@github.com:COO-Utilities/gammavac.git
+[submodule "ozoptics"]
+	path = ozoptics
+	url = git@github.com:COO-Utilities/ozoptics.git
+[submodule "thorlabs"]
+	path = thorlabs
+	url = git@github.com:COO-Utilities/thorlabs.git
+[submodule "standa"]
+	path = standa
+	url = git@github.com:COO-Utilities/standa.git
+[submodule "inficon"]
+	path = inficon
+	url = git@github.com:COO-Utilities/inficon.git
+[submodule "sunpower"]
+	path = sunpower
+	url = git@github.com:COO-Utilities/sunpower.git
+[submodule "newport"]
+	path = newport
+	url = git@github.com:COO-Utilities/newport.git
+[submodule "onewire"]
+	path = onewire
+	url = git@github.com:COO-Utilities/onewire.git
+[submodule "lakeshore"]
+	path = lakeshore
+	url = git@github.com:COO-Utilities/lakeshore.git
