@@ -1,0 +1,32 @@
+
+name: Recursive testing
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code 
+      uses: actions/checkout@3
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.*' # I think that this is the latest update in version 3
+
+    - name: Install Dependencies
+      run: |
+        python -m venv .venv
+        source .venv/bin/activate
+        python -m pip install --upgrade pip
+        pip install pytest
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    - name: Test
+      run: |
+        # erm how do you define a variable in bash script
+        # maybe I should make a bash script in a seperate file and run it in this 
+        # I think that should work 
+
