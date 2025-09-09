@@ -9,7 +9,9 @@ jobs:
 
     steps:
     - name: Checkout code 
-      uses: actions/checkout@3
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive # this clones all submodules
 
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -26,7 +28,5 @@ jobs:
 
     - name: Test
       run: |
-        # erm how do you define a variable in bash script
-        # maybe I should make a bash script in a seperate file and run it in this 
-        # I think that should work 
-
+        source .venv/bin/activate
+        find $GITHUB_WORKSPACE -type d -name "tests" -exec pytest {};
