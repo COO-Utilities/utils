@@ -1,0 +1,32 @@
+
+name: Test all
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code 
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive # this clones all submodules
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
+    - name: Install Dependencies
+      run: |
+        python -m venv .venv
+        source .venv/bin/activate
+        python -m pip install --upgrade pip
+        pip install pytest
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    - name: Test
+      run: |
+        source .venv/bin/activate
+        find "$GITHUB_WORKSPACE" -type d -name "tests" -exec pytest {} \;
