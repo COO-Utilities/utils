@@ -1,5 +1,5 @@
 
-name: Recursive testing
+name: Test all
 
 on: [push]
 
@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.*' # I think that this is the latest update in version 3
+        python-version: '3.12'
 
     - name: Install Dependencies
       run: |
