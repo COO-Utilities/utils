@@ -30,4 +30,4 @@ jobs:
     - name: Test
       run: |
         source .venv/bin/activate
-        find "$GITHUB_WORKSPACE" -type d -name "tests" -exec pytest {} \;
+        pytest
