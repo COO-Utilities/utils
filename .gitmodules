@@ -25,3 +25,6 @@
 [submodule "lakeshore"]
 	path = lakeshore
 	url = git@github.com:COO-Utilities/lakeshore.git
+[submodule "pi"]
+	path = pi
+	url = https://github.com/COO-Utilities/pi
