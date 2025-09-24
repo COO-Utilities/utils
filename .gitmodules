@@ -28,3 +28,6 @@
 [submodule "pi"]
 	path = pi
 	url = https://github.com/COO-Utilities/pi
+[submodule "xeryon"]
+	path = xeryon
+	url = https://github.com/COO-Utilities/xeryon
