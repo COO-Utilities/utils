@@ -24,9 +24,16 @@ jobs:
         source .venv/bin/activate
         python -m pip install --upgrade pip
         pip install pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        git submodule foreach --recursive '
+          set -e
+          echo ">>> Entering $name at $path"
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f pyproject.toml ]; then
+            pip install -e .
+          fi
+        '
 
     - name: Test
       run: |
         source .venv/bin/activate
-        find "$GITHUB_WORKSPACE" -type d -name "tests" -exec pytest {} \;
+        pytest
